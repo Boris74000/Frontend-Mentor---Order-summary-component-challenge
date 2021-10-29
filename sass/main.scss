@@ -1,3 +1,90 @@
-h1 {
-    color: red;
+@import "reset.scss";
+
+$bg-color-body: #dfe8ff;
+$bg-color-subscription: #f8f9ff;
+
+$color-primary: #86899d;
+$color-secondary: #25315c;
+$color-tertiary: #372ae0;
+
+.container {
+    //background-image: url("./images/pattern-background-mobile.svg");
+    background-color: $bg-color-body;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
+
+h1, .card__description, .card__subscription--paraAnnualPlan {
+    text-align: center;
+    color: $color-secondary;
+}
+
+.card__description {
+    padding: 0 20px;
+}
+
+h1 {
+    margin-bottom: 20px;
+}
+
+p {
+    color: $color-primary;
+}
+
+.card {
+    width: 80%;
+    background-color: #ffffff;
+    
+    > div:not(div:first-child) {
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+}
+
+.card, .card__subscription {
+    border-radius: 25px;
+}
+
+.card__illustration {
+    border-radius: 25px 25px 0 0;
+}
+
+.card__subscription {
+    background-color: $bg-color-subscription;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin: 0 20px;
+    padding: 10px;
+    
+    &--linkChangeSubscription {
+        color: $color-tertiary;
+    }
+}
+
+.card__subscription--linkChangeSubscription {
+    text-decoration: underline;
+}
+
+.card__payment, .card__cancel {
+    display: flex;
+    justify-content: center;
+}
+
+.btn-payment, .card__cancel, h1, .card__subscription--paraAnnualPlan, .card__subscription--linkChangeSubscription {
+    font-weight: bold;
+}
+
+.btn-payment {
+    background-color: $color-tertiary;
+    padding: 10px 50px;
+    color: #ffffff;
+    border-radius: 10px;
+}
+
+.card__cancel {
+    color: #737e94;
+}
+

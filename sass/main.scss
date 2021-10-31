@@ -114,11 +114,14 @@ p {
 }
 
 .card__cancel {
-    color: $color-primary;
+    a {
+        color: $color-primary;
     
-    &:hover {
-        color: $color-secondary;
+        &:hover {
+            color: $color-secondary;
+        }
     }
+    
 }
 
 @media (max-width: 375px){

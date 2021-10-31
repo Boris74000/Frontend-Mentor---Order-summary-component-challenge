@@ -1,14 +1,20 @@
 @import "reset.scss";
+@import url('https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@500;700;900&display=swap');
+
+$font: 'Red Hat Display', sans-serif;
 
 $bg-color-body: #dfe8ff;
-$bg-color-subscription: #f8f9ff;
+$bg-color-subscription: hsl(225, 100%, 98%);
 
-$color-primary: #86899d;
-$color-secondary: #25315c;
-$color-tertiary: #372ae0;
+$color-primary: hsl(224, 23%, 55%);
+$color-secondary: hsl(223, 47%, 23%);
+$color-tertiary: hsl(245, 75%, 52%);
+
+body {
+    font-family: $font;
+}
 
 .container {
-    //background-image: url("./images/pattern-background-mobile.svg");
     background-color: $bg-color-body;
     height: 100vh;
     display: flex;
@@ -27,6 +33,7 @@ h1, .card__description, .card__subscription--paraAnnualPlan {
 
 h1 {
     margin-bottom: 20px;
+    font-size: 1.5rem;
 }
 
 p {
@@ -34,17 +41,14 @@ p {
 }
 
 .card {
-    width: 80%;
+    width: 335px;
     background-color: #ffffff;
+    border-radius: 25px;
     
     > div:not(div:first-child) {
         margin-top: 20px;
         margin-bottom: 20px;
     }
-}
-
-.card, .card__subscription {
-    border-radius: 25px;
 }
 
 .card__illustration {
@@ -55,17 +59,37 @@ p {
     background-color: $bg-color-subscription;
     display: flex;
     align-items: center;
-    justify-content: space-around;
+    justify-content: space-between;
     margin: 0 20px;
     padding: 10px;
     
     &--linkChangeSubscription {
         color: $color-tertiary;
     }
+    
+    > div {
+        display: flex;
+        align-items: center;
+        
+        img {
+            width: 50px;
+            height: 50px;
+            margin-right: 10px;
+        }
+    }
+}
+
+.btn-payment, .card__subscription {
+    border-radius: 10px;
 }
 
 .card__subscription--linkChangeSubscription {
     text-decoration: underline;
+    
+    &:hover {
+        text-decoration: none;
+        color: #756cf1;
+    }
 }
 
 .card__payment, .card__cancel {
@@ -74,17 +98,46 @@ p {
 }
 
 .btn-payment, .card__cancel, h1, .card__subscription--paraAnnualPlan, .card__subscription--linkChangeSubscription {
-    font-weight: bold;
+    font-weight: 900;
 }
 
 .btn-payment {
     background-color: $color-tertiary;
-    padding: 10px 50px;
+    padding: 10px 66px;
     color: #ffffff;
-    border-radius: 10px;
+    box-shadow: 0 17px 20px -1px rgb(165 174 220 / 73%);;
+    
+    
+    &:hover {
+        background-color: #756cf1;
+    }
 }
 
 .card__cancel {
-    color: #737e94;
+    color: $color-primary;
+    
+    &:hover {
+        color: $color-secondary;
+    }
+}
+
+@media (max-width: 375px){
+    .container {
+        background-image: url("../images/pattern-background-mobile.svg");
+        background-repeat: no-repeat;
+    }
+}
+
+@media (min-width: 1200px) {
+    .container {
+        background-image: url("../images/pattern-background-desktop.svg");
+        background-repeat: no-repeat;
+    }
+}
+
+@media (min-width: 1440px) {
+    .container {
+        background-image: none;
+    }
 }
 
